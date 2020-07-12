@@ -4,7 +4,7 @@ const prefix = ".";
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-// messages
+
 client.on('message', msg => {
   if (msg.content.toLowerCase().includes('dog')) { 
     msg.react('709181387579850813')
