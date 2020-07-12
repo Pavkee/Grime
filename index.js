@@ -6,7 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase().includes('dog')) { 
+  if (/d[o0]+g/.test(msg.content)) {
     msg.react('709181387579850813')
   }
   if (msg.author.bot) {
