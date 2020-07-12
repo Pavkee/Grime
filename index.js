@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = ".";
 const express = require('express')
 const http = require('http')
 const PORT   = process.env.PORT || 3000
