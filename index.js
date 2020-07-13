@@ -36,7 +36,7 @@ client.on('message', msg => {
   }
 
   if (msg.content.includes("ask")) {
-    if (message.content.indexOf(config.prefix) !== 0) return;
+    if (msg.content.indexOf(config.prefix) !== 0) return;
     const replies = ["yes", "no", "maybe"]
     const randomreply = replies[Math.floor(Math.random() * replies.length)];
     msg.channel.send(randomreply);
