@@ -15,6 +15,17 @@ app.get('/', (req, res) => {
 })
 
 client.on('ready', () => {
+
+  bot.user.setPresence({
+    status: 'online',
+    activity: {
+        type: 'WATCHING',
+        name: 'dog memes',
+    }
+})
+
+bot.user.setUsername('Pavicord')
+
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
