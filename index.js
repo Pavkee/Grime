@@ -28,9 +28,6 @@ client.on('message', msg => {
   }
   
 })
-if (ask.test(+msg.content)) {
-    msg.react('709181387579850813')
-}
 
 
 
