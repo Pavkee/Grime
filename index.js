@@ -20,24 +20,26 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (/d[o0]+g/i.test(msg.content)) {
-    msg.react('709181387579850813')
-  }
   if (msg.author.bot) {
     return
+  }
+  if (/d[o0]+g/i.test(msg.content)) {
+    msg.react('709181387579850813')
   }
   
 })
 
 client.on('message', msg => {
-  
-  if (+msg.content.includes("ask")) {
-    var replies = ["yes", "no", "maybe"]
-    var randomreply = replies[Math.floor(Math.random() * replies.length)];
-    msg.channel.send(randomreply);
-  }
+
   if (msg.author.bot) {
     return
+  }
+
+  if (msg.content.includes("ask")) {
+    if (message.content.indexOf(config.prefix) !== 0) return;
+    const replies = ["yes", "no", "maybe"]
+    const randomreply = replies[Math.floor(Math.random() * replies.length)];
+    msg.channel.send(randomreply);
   }
   
 })
