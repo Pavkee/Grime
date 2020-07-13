@@ -7,6 +7,12 @@ const app = express()
 const server = http.createServer(app)
 const isRunningLocaly = require('os').hostname() === 'DESKTOP-EHM4SR0'
 const PREFIX = isRunningLocaly ? '-' : '+'
+const replies = ["yes", "no", "perhaps", "ain't sure", "can't tell", "wouldn't bet", "definitely not", "no way", "stop asking me shit"]
+const randomreply = replies[Math.floor(Math.random() * replies.length)];
+
+function isCommand (prefix, command, content) {
+  return (new RegExp(prefix.replace(/(.)/g, '\\$1') + command + '(?=\\s+|$)')).test(content)
+}
 
 server.listen(PORT)
 
@@ -26,6 +32,9 @@ client.on('message', msg => {
   if (/d[o0]+g/i.test(msg.content)) {
     msg.react('709181387579850813')
   }
+  if (isCommand(PREFIX, 'ping', msg.content)) {
+    msg.reply('pong!')
+  }
   
 })
 
@@ -35,9 +44,7 @@ client.on('message', msg => {
     return
   }
 
-  if (msg.content.startsWith(PREFIX + 'ask')) {
-    const replies = ["yes", "no", "maybe"]
-    const randomreply = replies[Math.floor(Math.random() * replies.length)];
+  if (isCommand(PREFIX, 'ask', msg.content)) {
     msg.channel.send(randomreply);
   }
   
