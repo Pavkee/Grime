@@ -18,9 +18,6 @@ app.get('/', (req, res) => {
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-var replies = ["yes", "no", "maybe"];
-var reply = Math.floor(Math.random() * replies.length);
-msg.channel.send(replies[reply]);
 
 client.on('message', msg => {
   if (/d[o0]+g/i.test(msg.content)) {
@@ -31,17 +28,23 @@ client.on('message', msg => {
   }
   
 })
-if (+msg.content.includes("ask")) {
-  msg.channel.send(reply);
-}
 
-
-
-
+client.on('message', msg => {
+  
+  if (msg.content.includes("ask")) {
+    var replies = ["yes"]
+      msg.channel.send(replies);
+  }
+  if (msg.author.bot) {
+    return
+  }
+  
+})
+ 
 client.login(process.env.TOKEN)
 
 
 
-
+var replies = ["yes", "no", "maybe"]
 
 
