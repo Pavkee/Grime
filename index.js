@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+client.user.setUsername("Pavicord");
 
 client.on('message', msg => {
   if (/d[o0]+g/i.test(msg.content)) {
