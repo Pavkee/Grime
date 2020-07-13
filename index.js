@@ -10,6 +10,7 @@ const PREFIX = isRunningLocaly ? '-' : '+'
 
 server.listen(PORT)
 
+
 app.get('/', (req, res) => {
   res.send('Placeholder!')
 })
