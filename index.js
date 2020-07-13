@@ -31,11 +31,9 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   
-  if (msg.content.includes("ask")) {
+  if (+msg.content.includes("ask")) {
     var replies = ["yes", "no", "maybe"]
-    var reply = Math.floor(Math.random() * msg.length);
-    msg.channel.send(replies[reply]);
-
+      msg.channel.send(replies);
   }
   if (msg.author.bot) {
     return
