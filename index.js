@@ -7,8 +7,7 @@ const app = express()
 const server = http.createServer(app)
 const isRunningLocaly = require('os').hostname() === 'DESKTOP-EHM4SR0'
 const PREFIX = isRunningLocaly ? '-' : '+'
-const replies = ["yes", "no", "perhaps", "ain't sure", "can't tell", "wouldn't bet", "definitely not", "no way", "stop asking me shit"]
-const randomreply = replies[Math.floor(Math.random() * replies.length)];
+
 
 function isCommand (prefix, command, content) {
   return (new RegExp(prefix.replace(/(.)/g, '\\$1') + command + '(?=\\s+|$)')).test(content)
@@ -45,6 +44,8 @@ client.on('message', msg => {
   }
 
   if (isCommand(PREFIX, 'ask', msg.content)) {
+    const replies = ["yes", "no", "perhaps", "ain't sure", "can't tell", "wouldn't bet", "definitely not", "no way", "stop asking me shit"]
+    const randomreply = replies[Math.floor(Math.random() * replies.length)];
     msg.channel.send(randomreply);
   }
   
