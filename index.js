@@ -29,7 +29,7 @@ client.on('message', msg => {
     return
   }
   if (/d[o0]+g/i.test(msg.content)) {
-    const reactions = ["724331980916916294", "709181387579850813"]
+    const reactions = ["724331980916916294", "709181387579850813", "728901746465833000", "724332108251922452", "724331874402435094", "724332311562158210"]
     const randomreact = reactions[Math.floor(Math.random() * reactions.length)];
     msg.react(randomreact);
   }
@@ -52,5 +52,3 @@ client.on('message', msg => {
  
 
 client.login(process.env.TOKEN)
-
-
