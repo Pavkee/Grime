@@ -41,10 +41,10 @@ client.on('message', msg => {
   
 })
  
+
 client.login(process.env.TOKEN)
 
 
 
-var replies = ["yes", "no", "maybe"]
 
 
