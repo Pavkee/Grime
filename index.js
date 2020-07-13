@@ -20,7 +20,7 @@ client.on('ready', () => {
 });
 var replies = ["yes", "no", "maybe"];
 var reply = Math.floor(Math.random() * replies.length);
-message.channel.send(replies[reply]);
+msg.channel.send(replies[reply]);
 
 client.on('message', msg => {
   if (/d[o0]+g/i.test(msg.content)) {
@@ -31,8 +31,8 @@ client.on('message', msg => {
   }
   
 })
-if (+message.content.includes("ask")) {
-  message.channel.send(reply);
+if (+msg.content.includes("ask")) {
+  msg.channel.send(reply);
 }
 
 
