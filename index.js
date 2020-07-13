@@ -33,7 +33,8 @@ client.on('message', msg => {
   
   if (+msg.content.includes("ask")) {
     var replies = ["yes", "no", "maybe"]
-      msg.channel.send(replies);
+    var randomreply = replies[Math.floor(Math.random() * replies.length)];
+    msg.channel.send(randomreply);
   }
   if (msg.author.bot) {
     return
@@ -43,7 +44,6 @@ client.on('message', msg => {
  
 
 client.login(process.env.TOKEN)
-
 
 
 
