@@ -10,7 +10,7 @@ const PREFIX = isRunningLocaly ? '-' : '+'
 
 
 function isCommand (prefix, command, content) {
-  return (new RegExp(prefix.replace(/(.)/g, '\\$1') + command + '(?=\\s+|$)')).test(content)
+  return (new RegExp('^' + prefix.replace(/(.)/g, '\\$1') + command + '(?=\\s+|$)')).test(content)
 }
 
 server.listen(PORT)
