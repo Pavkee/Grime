@@ -43,7 +43,7 @@ client.on('message', msg => {
   }
 
   if (isCommand(PREFIX, 'ask', msg.content)) {
-    const replies = ["Yes.", "No.", "Perhaps.", "Ain't sure...", "Can't tell...", "Wouldn't bet.", "  Definitely not!", "No way!", "Stop asking me shit.", "Seriously? Wtf is that question???", "Wow you're so creative! Not gonna answer on that shit.", "Imagine spending your time asking a bot questions. Get a life lmao.", "Can you fuck off already? I have more important things to do than answer your retarded questions.",  "When you come up with something more original, ask me again.", "Ayy, i like this one! The answer is YES!", "I like your way of thinking... but no."]
+    const replies = ["Yes.", "No.", "Perhaps.", "Ain't sure...", "Can't tell...", "Wouldn't bet.", "  Definitely not!", "No way!", "Stop asking me shit.", "Ayy, i like this one! The answer is YES!", "I like your way of thinking... but no."]
     const randomreply = replies[Math.floor(Math.random() * replies.length)];
     msg.channel.send(randomreply);
   }
