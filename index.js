@@ -50,7 +50,7 @@ client.on('message', msg => {
   
 })
 
-if (isCommand(PREFIX, 'pb')) {
+if (message.content.startsWith (PREFIX + "pb")){
   const descriptions = ["Test", "Idk"]
   const randomdescription = descriptions[Math.floor(Math.random() * descriptions.length)];
   msg.channel.send({embed: {
