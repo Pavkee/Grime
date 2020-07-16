@@ -50,16 +50,5 @@ client.on('message', msg => {
   
 })
 
-if (message.content.startsWith (PREFIX + "pb")){
-  const exampleEmbed = new Discord.MessageEmbed()
-  .setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-  msg.channel.send(exampleEmbed);
- }
-
 
   client.login(process.env.TOKEN)
