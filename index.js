@@ -58,8 +58,6 @@ if (isCommand(PREFIX + 'pb')) {
   msg.channel.send({embed: {
     color: 3447003,
     description: "randomdescription"
-    .setImage('randomimage')
-  
   }})
 }
  
