@@ -50,6 +50,18 @@ client.on('message', msg => {
   
 })
 
+if (isCommand(PREFIX + 'pb')) {
+  const images = ["https://i.imgur.com/Zph9UYG.png", "https://i.imgur.com/q3Z2vm7.png"]
+  const descriptions = ["Test", "Idk"]
+  const randomimage = images[Math.floor(Math.random() * images.length)];
+  const randomdescription = descriptions[Math.floor(Math.random() * descriptions.length)];
+  msg.channel.send({embed: {
+    color: 3447003,
+    description: "randomdescription"
+    .setImage('randomimage')
+  
+  }})
+}
  
 
 client.login(process.env.TOKEN)
