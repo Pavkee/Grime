@@ -51,13 +51,15 @@ client.on('message', msg => {
 })
 
 if (message.content.startsWith (PREFIX + "pb")){
-  const descriptions = ["Test", "Idk"]
-  const randomdescription = descriptions[Math.floor(Math.random() * descriptions.length)];
-  msg.channel.send({embed: {
-    color: 3447003,
-    description: "sgsgsdfsdfs" + descriptions[randomdescription]
-  }})
-}
- 
+  const exampleEmbed = new Discord.MessageEmbed()
+  .setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+  msg.channel.send(exampleEmbed);
+ }
 
-client.login(process.env.TOKEN)
+
+  client.login(process.env.TOKEN)
