@@ -33,6 +33,7 @@ client.on('message', msg => {
   if (isCommand(PREFIX, 'ping', msg.content)) {
   msg.reply('pong!')
  }
+
 })
 
 client.on('message', msg => {
@@ -49,7 +50,6 @@ client.on('message', msg => {
 })
 
 client.on('message', msg => {
-
   if (msg.author.bot) {
     return
   }
@@ -70,8 +70,10 @@ client.on('message', msg => {
   if (isCommand(PREFIX, 'franticroll', msg.content)) {
     const min = 83
     const max = 780
-const x = Math.floor(Math.random() * (max - min)) + min
+    const x = Math.floor(Math.random() * (max - min)) + min 
+    msg.channel.send(x);
   }
+
 })
 
   client.login(process.env.TOKEN)
