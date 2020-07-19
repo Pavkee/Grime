@@ -62,5 +62,16 @@ client.on('message', msg => {
   
 })
 
+client.on('message', msg => {
+  if (msg.author.bot) {
+    return
+  }
+
+  if (isCommand(PREFIX, 'franticroll', msg.content)) {
+    const min = 83
+    const max = 780
+const x = Math.floor(Math.random() * (max - min)) + min
+  }
+})
 
   client.login(process.env.TOKEN)
