@@ -96,6 +96,11 @@ async function requestItems (apiUrl) {
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
+  
+  return boxItems;
+  
+  }
+
   client.on('message', msg => {
     if (msg.author.bot) {
       return
@@ -106,11 +111,7 @@ async function requestItems (apiUrl) {
     }
   
   })
-  return boxItems;
-  
-  }
 
-  
   
   
 
