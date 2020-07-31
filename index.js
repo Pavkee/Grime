@@ -98,7 +98,7 @@ async function requestItems (apiUrl) {
   }
   return boxItems;
 }
-if (command === 'pack') {
+if (isCommand(PREFIX, 'pack', msg.content)) {
   msg.channel.send(boxItems);
 }
  
