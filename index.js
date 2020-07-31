@@ -92,7 +92,7 @@ client.on('message', msg => {
   }
 
   if (isCommand(PREFIX, 'pack', msg.content)) {
-    msg.channel.send(item);
+    msg.channel.send(items);
   }
 
 })
