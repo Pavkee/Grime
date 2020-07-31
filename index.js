@@ -7,7 +7,6 @@ const app = express()
 const server = http.createServer(app)
 const isRunningLocaly = require('os').hostname() === 'DESKTOP-EHM4SR0'
 const PREFIX = isRunningLocaly ? '-' : '+'
-const fetch = require('node-fetch');
 
 
 function isCommand (prefix, command, content) {
@@ -76,26 +75,36 @@ client.on('message', msg => {
   }
 
 })
+const fetch = require('node-fetch')
+const items = requestItems('https://workshop-unlimited.web.app/items');
+
+async function requestItems (apiUrl) {
+  const response = await fetch(apiUrl);
+  try {
+    const items = await response.json();
+    return items;
+  }
+  catch (err) {
+    console.error('Failed to load items from API!');
+    console.error(err);
+    return null;
+  }
+}
   function getRandomItems (amount) {
   const boxItems = [];
-  for (let i = 0; i < amount; i++) {
-    const items = ["sggdvsfsfsdfs", "bdfgdgvdfgdf", "gdfgsdfsdfs", "gvdfgdafrd"]
+  for (let i = 0; i < amount; i++) { 
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
   return boxItems;
-}
-
-client.on('message', msg => {
-  if (msg.author.bot) {
-    return
+  
   }
 
-  if (isCommand(PREFIX, 'pack', msg.content)) {
-    msg.channel.send(items);
+  if (command === 'pack') {
+  
+    message.channel.send(items);
   }
-
-})
+  
 
 
   client.login(process.env.TOKEN)
