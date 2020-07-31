@@ -103,7 +103,7 @@ client.on('message', msg => {
   if (msg.content.startsWith(PREFIX + 'box')) {
     const items = getRandomItems();
     const itemNames = items.map(item => item.name);
-    msg.reply('You got ' + itemNames.join(', '));
+    msg.reply('You got' + itemNames.join(', '));
     return;
   }
 });
