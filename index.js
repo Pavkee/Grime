@@ -90,18 +90,17 @@ async function requestItems (apiUrl) {
     return null;
   }
 }
-if (isCommand(PREFIX, 'pack', msg.content)) {
   function getRandomItems (amount) {
   const boxItems = [];
   for (let i = 0; i < amount; i++) { 
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
-    msg.channel.send(boxItems);
-    }
-  }}
-  
-
-
+  }
+  return boxItems;
+}
+if (command === 'pack') {
+  msg.channel.send(boxItems);
+}
  
 
 
