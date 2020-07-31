@@ -98,9 +98,8 @@ async function requestItems (apiUrl) {
   }
   return boxItems;
 }
-if (isCommand(PREFIX, 'pack', msg.content)) {
-  msg.channel.send(getRandomItems);
-}
+
+
  
 
 
