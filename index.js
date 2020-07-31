@@ -96,11 +96,17 @@ async function requestItems (apiUrl) {
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
- 
+  return boxItems;
 }
 
-
-
+client.on('message', msg => {
+  if (msg.content.startsWith(PREFIX + 'box')) {
+    const items = getRandomItems();
+    const itemNames = items.map(item => item.name);
+    msg.reply('You got ' + itemNames.join(', '));
+    return;
+  }
+});
  
 
 
