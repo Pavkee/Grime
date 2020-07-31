@@ -100,7 +100,7 @@ async function requestItems (apiUrl) {
  
 }
 if (isCommand(PREFIX, 'pack', msg.content)) {
-  msg.channel.send(pack);
+  msg.channel.send(packs);
 }
 
 
