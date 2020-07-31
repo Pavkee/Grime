@@ -90,30 +90,25 @@ async function requestItems (apiUrl) {
     return null;
   }
 }
+if (command === 'pack') {
   function getRandomItems (amount) {
   const boxItems = [];
   for (let i = 0; i < amount; i++) { 
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
-  
   return boxItems;
   
-  }
+  }}
 
-  client.on('message', msg => {
-    if (msg.author.bot) {
-      return
-    }
+ 
+
+
   
-    if (isCommand(PREFIX, 'pack', msg.content)) { 
-      msg.channel.send(item);
-    }
-  
-  })
 
   
   
 
 
   client.login(process.env.TOKEN)
+  
