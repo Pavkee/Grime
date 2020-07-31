@@ -91,12 +91,16 @@ async function requestItems (apiUrl) {
   }
 }
   function getRandomItems (amount) {
+  const getRandomItems = packs;
   const boxItems = [];
   for (let i = 0; i < amount; i++) { 
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
-  return boxItems;
+ 
+}
+if (isCommand(PREFIX, 'pack', msg.content)) {
+  msg.channel.send(pack);
 }
 
 
