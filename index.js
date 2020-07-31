@@ -76,7 +76,7 @@ client.on('message', msg => {
   }
 
 })
-function getRandomItems (amount) {
+  function getRandomItems (amount) {
   const boxItems = [];
   for (let i = 0; i < amount; i++) {
     const items = ["sggdvsfsfsdfs", "bdfgdgvdfgdf", "gdfgsdfsdfs", "gvdfgdafrd"]
