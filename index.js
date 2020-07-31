@@ -7,6 +7,7 @@ const app = express()
 const server = http.createServer(app)
 const isRunningLocaly = require('os').hostname() === 'DESKTOP-EHM4SR0'
 const PREFIX = isRunningLocaly ? '-' : '+'
+const fetch = require('node-fetch');
 
 
 function isCommand (prefix, command, content) {
@@ -75,5 +76,26 @@ client.on('message', msg => {
   }
 
 })
+function getRandomItems (amount) {
+  const boxItems = [];
+  for (let i = 0; i < amount; i++) {
+    const items = ["sggdvsfsfsdfs", "bdfgdgvdfgdf", "gdfgsdfsdfs", "gvdfgdafrd"]
+    const item = items[Math.floor(Math.random() * items.length)];
+    boxItems.push(item);
+  }
+  return boxItems;
+}
+
+client.on('message', msg => {
+  if (msg.author.bot) {
+    return
+  }
+
+  if (isCommand(PREFIX, 'pack', msg.content)) {
+    msg.channel.send(getRandomItems);
+  }
+
+})
+
 
   client.login(process.env.TOKEN)
