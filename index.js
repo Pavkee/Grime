@@ -96,14 +96,22 @@ async function requestItems (apiUrl) {
     const item = items[Math.floor(Math.random() * items.length)];
     boxItems.push(item);
   }
+  client.on('message', msg => {
+    if (msg.author.bot) {
+      return
+    }
+  
+    if (isCommand(PREFIX, 'pack', msg.content)) { 
+      msg.channel.send(item);
+    }
+  
+  })
   return boxItems;
   
   }
 
-  if (command === 'pack') {
   
-    message.channel.send(items);
-  }
+  
   
 
 
