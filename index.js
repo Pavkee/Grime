@@ -75,8 +75,6 @@ client.on('message', msg => {
   }
 
 })
-const fetch = require('node-fetch')
-
 
 const querystring = require('querystring');
 const r2          = require('r2');
