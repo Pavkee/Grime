@@ -84,6 +84,7 @@ const Discord     = require('discord.js');
 
 const DOG_API_URL   = "https://api.thedogapi.com/"
 const DOG_API_KEY   = "c43a406b-bc06-4b22-912e-c47b4352fa23"; // get a free key from - https://thedogapi.com/signup
+const DISCORD_TOKEN = 'NzMxMTQzMDAyNTc5MjcxNzcw.Xwhv-w.VHvxMJ9I4I2nOL6Cfuh_48WSviM'; // get your bot specific Token - https://discordapp.com/developers/applications/me/create
 
 // Discord connection code ---
 const client = new Discord.Client();
@@ -101,7 +102,7 @@ client.on('error', data => {
   console.log('error',data);
   // attempt reconnection x times, after x seconds, exponential backoff
 });
-client.login(TOKEN);
+client.login(DISCORD_TOKEN);
 
 /**
  * Called whenever a message is posted into the same channel as the Bot
