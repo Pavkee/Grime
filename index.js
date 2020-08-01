@@ -84,7 +84,7 @@ const Discord     = require('discord.js');
 
 const DOG_API_URL   = "https://api.thedogapi.com/"
 const DOG_API_KEY   = "c43a406b-bc06-4b22-912e-c47b4352fa23"; // get a free key from - https://thedogapi.com/signup
-const DISCORD_TOKEN = 'NzMxMTQzMDAyNTc5MjcxNzcw.Xwhv-w.tQUzVpaeYSMJIzkDUbcBE3bNOxk'; // get your bot specific Token - https://discordapp.com/developers/applications/me/create
+const DISCORD_TOKEN = 'NzMxMTQzMDAyNTc5MjcxNzcw.Xwhv-w.RlUUsVz21ljeUkfZ45dzt7qdGb8'; // get your bot specific Token - https://discordapp.com/developers/applications/me/create
 
 // Discord connection code ---
 const client = new Discord.Client();
