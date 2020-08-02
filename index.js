@@ -84,7 +84,7 @@ var client = new discord.Client();
  
  
 // Login into discord using bot token (do not share token with anyone!).
-client.login("private token");
+client.login(process.env.TOKEN)
  
 client.on("ready", function() {
     console.log("logged in");
@@ -149,5 +149,5 @@ function image(message, parts) {
  
 
 
-  client.login(process.env.TOKEN)
+
   
