@@ -148,6 +148,6 @@ function image(message, parts) {
 
  
 
-
+client.login(process.env.TOKEN)
 
   
