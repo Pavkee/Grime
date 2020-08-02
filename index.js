@@ -81,14 +81,7 @@ var request = require("request"); /* Used to make requests to URLs and fetch res
  
 var discord = require("discord.js");
 var client = new discord.Client();
- 
- 
-// Login into discord using bot token (do not share token with anyone!).
-client.login(process.env.TOKEN);
- 
-client.on("ready", function() {
-    console.log("logged in");
-});
+
  
 client.on("message", function(message) {
  
