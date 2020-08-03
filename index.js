@@ -21,7 +21,18 @@ app.get('/', (req, res) => {
 })
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  bot.user.setPresence({
+    status: 'online',
+    activity: {
+        type: 'WATCHING',
+        name: 'test',
+        url: 'https://discordapp.com/',
+    }
+});
+    
+bot.user.setUsername('Pavicord');
+
+console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
