@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 })
 
 client.on('ready', () => {
-  bot.user.setPresence({
+  client.user.setPresence({
     status: 'online',
     activity: {
         type: 'WATCHING',
@@ -30,7 +30,7 @@ client.on('ready', () => {
     }
 });
     
-bot.user.setUsername('Pavicord');
+client.user.setUsername('Pavicord');
 
 console.log(`Logged in as ${client.user.tag}!`);
 });
