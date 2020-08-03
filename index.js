@@ -25,7 +25,7 @@ client.on('ready', () => {
     status: 'online',
     activity: {
         type: 'WATCHING',
-        name: 'test',
+        name: 'for commands',
         url: 'https://discordapp.com/',
     }
 });
