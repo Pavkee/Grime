@@ -77,25 +77,11 @@ client.on('message', msg => {
     return
   }
 
-  if (isCommand(PREFIX, 'franticroll')) {
+  if (msg.content.startsWith(PREFIX + 'franticroll')) {
     const min = 83
     const max = 780
     const x = Math.floor(Math.random() * (max - min)) + min 
     msg.channel.send(x);
-  }
-
-})
-
-client.on('message', msg => {
-  if (msg.author.bot) {
-    return
-  }
-
-  if (isCommand(PREFIX, 'when')) {
-    const start = 20/10/2020
-    const end = 30/12/2030
-    const e = Math.floor(Math.random() * (start - end))
-    msg.channel.send(e);
   }
 
 })
