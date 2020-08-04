@@ -77,7 +77,7 @@ client.on('message', msg => {
     return
   }
 
-  if (msg.content.startsWith(PREFIX + 'franticroll')) {
+  if (isCommand(PREFIX + 'franticroll')) {
     const min = 83
     const max = 780
     const x = Math.floor(Math.random() * (max - min)) + min 
