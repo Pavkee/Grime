@@ -13,7 +13,6 @@ function isCommand (prefix, command, content) {
   return (new RegExp('^' + prefix.replace(/(.)/g, '\\$1') + command + '(?=\\s+|$)')).test(content)
 }
 
-server.listen(PORT)
 
 
 app.get('/', (req, res) => {
@@ -21,6 +20,7 @@ app.get('/', (req, res) => {
 })
 
 client.on('ready', () => {
+  client.user.setUsername('Pavicord');
   client.user.setPresence({
     status: 'online',
     activity: {
@@ -30,7 +30,6 @@ client.on('ready', () => {
     }
 });
     
-client.user.setUsername('Pavicord');
 
 console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -78,7 +77,7 @@ client.on('message', msg => {
     return
   }
 
-  if (isCommand(PREFIX, 'franticroll', msg.content)) {
+  if (isCommand(PREFIX, 'franticroll')) {
     const min = 83
     const max = 780
     const x = Math.floor(Math.random() * (max - min)) + min 
@@ -87,10 +86,23 @@ client.on('message', msg => {
 
 })
 
+client.on('message', msg => {
+  if (msg.author.bot) {
+    return
+  }
 
+  if (isCommand(PREFIX, 'when')) {
+    const start = 20/10/2020
+    const end = 30/12/2030
+    const e = Math.floor(Math.random() * (start - end))
+    msg.channel.send(e);
+  }
+
+})
 
  
 
 client.login(process.env.TOKEN)
+server.listen(PORT)
 
   
