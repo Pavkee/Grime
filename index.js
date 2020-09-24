@@ -77,7 +77,7 @@ client.on('message', msg => {
   }
 
   if (msg.content.toLowerCase().includes('lol')) {
-    msg.react('470412496239460363');
+    msg.react('758708448057229312');
   }
   
 })
