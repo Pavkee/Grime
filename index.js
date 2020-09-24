@@ -65,7 +65,7 @@ client.on('message', msg => {
   }
 
   if (msg.content.toLowerCase().includes('lmfao')) {
-    msg.react('748498280694022195');
+    msg.react('758702122665246780');
     msg.channel.send('Perhaps, I am laughing my fucking ass off too.');
   }
 
@@ -77,12 +77,22 @@ client.on('message', msg => {
   }
 
   if (msg.content.toLowerCase().includes('lol')) {
-    msg.react('71950462548888788');
-    msg.channel.send('Perhaps, I am laughing my fucking ass off too.');
+    msg.react('7470412496239460363');
+  }
+  
+})
+
+client.on('message', msg => {
+  if (msg.author.bot) {
+    return
+  }
+
+  if (msg.content.toLowerCase().includes('lmao')) {
+    msg.react('7748498280694022195');
+    msg.channel.send('Laughing my doggy ass off.');
   }
 
 })
-
 
 client.on('message', msg => {
   if (msg.author.bot) {
