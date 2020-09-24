@@ -77,7 +77,7 @@ client.on('message', msg => {
   }
 
   if (msg.content.toLowerCase().includes('lol')) {
-    msg.react('7470412496239460363');
+    msg.react('470412496239460363');
   }
   
 })
@@ -88,7 +88,7 @@ client.on('message', msg => {
   }
 
   if (msg.content.toLowerCase().includes('lmao')) {
-    msg.react('7748498280694022195');
+    msg.react('748498280694022195');
     msg.channel.send('Laughing my doggy ass off.');
   }
 
