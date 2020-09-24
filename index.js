@@ -64,6 +64,18 @@ client.on('message', msg => {
     return
   }
 
+  if (msg.content.toLowerCase().includes('lmfao')) {
+    msg.react('748498280694022195');
+    msg.channel.send('Perhaps, I am laughing my fucking ass off too.');
+  }
+
+})
+
+client.on('message', msg => {
+  if (msg.author.bot) {
+    return
+  }
+
   if (isCommand(PREFIX, 'ask', msg.content)) {
     const replies = ["Yes.", "No.", "Perhaps.", "Ain't sure...", "Can't tell...", "Wouldn't bet.", "  Definitely not!", "No way!", "Stop asking me shit.", "Ayy, i like this one! The answer is YES!", "I like your way of thinking... but no."]
     const randomreply = replies[Math.floor(Math.random() * replies.length)];
@@ -90,5 +102,3 @@ client.on('message', msg => {
 
 client.login(process.env.TOKEN)
 server.listen(PORT)
-
-  
